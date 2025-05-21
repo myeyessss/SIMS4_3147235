@@ -145,6 +145,38 @@ body {
     border-radius: 10px;
 }
 
+/* Video Trailer */
+
+#trailer {
+    text-align: center; 
+    margin: 0 auto; 
+    max-width: 800px; 
+}
+
+.contenedor-video {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    border: 4px solid white; /* Borde blanco */
+    border-radius: 15px; /* Bordes redondos */
+    margin: 20px auto; /* Margen superior/inferior y centrado */
+    max-width: 560px; /* Ancho máximo igual al del iframe */
+}
+
+.contenedor-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    margin-top: 80px;
+    color: rgb(0, 0, 0); /* Opcional: si quieres que el título sea blanco */
+    margin-bottom: 20px;
+}
 
 /* Estilos del pie de página */
 .pie-pagina {
@@ -152,3 +184,4 @@ body {
     padding: 20px;
     background-color: #f8f9fa;
 }
+

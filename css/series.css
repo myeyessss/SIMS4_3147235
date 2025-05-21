@@ -7,6 +7,7 @@
 }
 
 body {
+    background-image: url(https://drop-assets.ea.com/images/COk6FtX3pTlaWoos4xvO3/3488ded8a8eecab707b0f3e3ef964589/ts4-ep18-guided-tour-asset-2.png?im=AspectCrop=%2816,9%29,xPosition=0.5,yPosition=0.5&q=80&w=2560);
     color: #333;
 }
 
@@ -49,7 +50,7 @@ body {
 .contenedor-descarga {
     position: relative;
     display: inline-block;
-    z-index: 101; /* Mayor que el encabezado */
+    z-index: 101; 
 }
 
 .menu-desplegable {
@@ -99,47 +100,91 @@ body {
 }
 
 
-
-/* Contenedor de la cuadrícula */
-.cuadricula {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+/* Estilos generales del carrusel */
+.carrusel-container {
+    width: 100%;
+    overflow-x: auto; /* Permite el scroll horizontal */
+    white-space: nowrap; /* Evita que los elementos se envuelvan */
+    padding: 20px 0;
+    scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
 }
 
-/* Estilo de cada ficha */
+.carrusel-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra de scroll en Chrome/Safari */
+}
+
+.cuadricula {
+    display: inline-flex; /* Muestra las fichas en línea */
+    gap: 20px; /* Espacio entre elementos */
+    padding: 0 20px;
+}
+
 .ficha {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px; /* Ancho mínimo de cada ficha */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    transition: transform 0.3s ease;
 }
 
 .ficha:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* Imagen circular */
 .imagen-circular {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto 15px;
-    display: block;
+    border: 3px solid white;
 }
 
-/* Nombre debajo de la imagen */
 .nombre {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin: 0;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    white-space: normal; /* Permite que el texto se envuelva */
+    max-width: 100px;
+    font-size: 14px;
+}
+
+/* Flechas de navegación (opcionales) */
+.carrusel-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.carrusel-btn {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.carrusel-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+@keyframes desplazamiento {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.cuadricula {
+    display: inline-flex;
+    gap: 20px;
+    padding: 0 20px;
+    animation: desplazamiento 20s linear infinite;
+}
+
+.carrusel-container:hover .cuadricula {
+    animation-play-state: paused;
 }
 
 /* Estilos del pie de página */
