@@ -1,0 +1,151 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: #333;
+}
+
+/* Estilos del encabezado */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: white;
+    position: relative; 
+    z-index: 100; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.menu-principal {
+    display: flex;
+    gap: 30px;
+}
+
+.opcion-menu {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.opcion-menu:hover {
+    color: #1AD53C;
+}
+
+/* Estilos del menú desplegable */
+.contenedor-descarga {
+    position: relative;
+    display: inline-block;
+    z-index: 101; /* Mayor que el encabezado */
+}
+
+.menu-desplegable {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 102; 
+    border-radius: 5px;
+    top: 100%; 
+    margin-top: 5px; 
+}
+.boton-descarga {
+    background-color: #1AD53C;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.boton-descarga:hover {
+    background-color: #2980b9;
+}
+
+
+
+.menu-desplegable a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.menu-desplegable a:hover {
+    background-color: #ddd;
+}
+
+.contenedor-descarga:hover .menu-desplegable {
+    display: block;
+}
+
+
+
+/* Contenedor de la cuadrícula */
+.cuadricula {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estilo de cada ficha */
+.ficha {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ficha:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen circular */
+.imagen-circular {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+/* Nombre debajo de la imagen */
+.nombre {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* Estilos del pie de página */
+.pie-pagina {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
